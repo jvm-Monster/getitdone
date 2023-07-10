@@ -2,7 +2,7 @@ package com.oretex.getitdone.model;
 
 public class User {
     private String name;
-    private String auth;
+    private int id;
 
     public User() {
     }
@@ -19,15 +19,12 @@ public class User {
         this.name = name;
     }
 
-    public String getAuth() {
-        return auth;
+    public int getId() {
+        return id;
     }
 
-    public void setAuth(String auth) {
-        this.auth = auth;
+    public void setId(int id) {
+        this.id = id;
     }
-
-    
-
-
+ 
 }

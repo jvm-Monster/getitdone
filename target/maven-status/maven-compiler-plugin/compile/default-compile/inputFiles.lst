@@ -1,5 +1,8 @@
 /home/jvm-monster/Documents/vscodeproj/getitdone/src/main/java/com/oretex/getitdone/resources/ToDoResource.java
+/home/jvm-monster/Documents/vscodeproj/getitdone/src/main/java/com/oretex/getitdone/tools/AuthGenerator.java
+/home/jvm-monster/Documents/vscodeproj/getitdone/src/main/java/com/oretex/getitdone/database/Database.java
 /home/jvm-monster/Documents/vscodeproj/getitdone/src/main/java/com/oretex/getitdone/model/Todo.java
 /home/jvm-monster/Documents/vscodeproj/getitdone/src/main/java/com/oretex/getitdone/Api.java
 /home/jvm-monster/Documents/vscodeproj/getitdone/src/main/java/com/oretex/getitdone/resources/UserRsource.java
 /home/jvm-monster/Documents/vscodeproj/getitdone/src/main/java/com/oretex/getitdone/model/User.java
+/home/jvm-monster/Documents/vscodeproj/getitdone/src/main/java/com/oretex/getitdone/services/UserHouse.java
