@@ -3,10 +3,9 @@ package com.oretex.getitdone.tools;
 import java.util.UUID;
 
 public class AuthGenerator {
-     private static String auth=UUID.randomUUID().toString();
-
-     public static String getAuth() {
+ 
+     public String getAuth() {
          
-         return auth;
+         return UUID.randomUUID().toString();
      }
  }
