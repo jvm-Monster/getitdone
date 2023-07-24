@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import com.oretex.getitdone.model.ToDo;
 import com.oretex.getitdone.model.User;
 
 public class Database {

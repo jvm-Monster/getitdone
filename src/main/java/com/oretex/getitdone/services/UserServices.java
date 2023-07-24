@@ -1,5 +1,6 @@
 package com.oretex.getitdone.services;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,11 +14,14 @@ public class UserServices {
     // adds new users to the database
     public void storeUserInfo(User user) {
         Map<String, User> userToStore = new HashMap<>();
+        // firstly creates a space for the user
+        user.setUserListToDoList(new ArrayList<>());
         // automatically generate an id for the user
         user.setUserId(Database.databaseSize() + 1);
         // generates an autamatic authenticaion id for the user and adds the use to the
+        user.setUserAuthentication(UUID.randomUUID().toString());
         // userTostore
-        userToStore.put("Bearer " + UUID.randomUUID().toString(), user);
+        userToStore.put(UUID.randomUUID().toString(), user);
         // adds the user to the database by storing the userToStore map object
         Database.storedata(userToStore);
     }
@@ -39,6 +43,9 @@ public class UserServices {
     }
 
     public boolean verify(User user, String authentication) {
+        if (authentication.startsWith("Bearer ")) {
+            authentication = authentication.substring("Bearer ".length()).trim();
+        }
         // for storing the user authentication key after verification
         String key = "";
         // for storing the user name after verification
@@ -52,6 +59,7 @@ public class UserServices {
             return verificationSuccess;
         } // runs the else statement if the if statement was not met
         else {
+            System.out.println("renning the else lloop");
             // gets the orginal user in the database if it exist by using its id
             Map<String, User> verifying = getUserInfo(user.getUserId());
             // gets the user entries such as it keys and username to verify
@@ -74,7 +82,11 @@ public class UserServices {
     }
 
     public boolean loggedIn(User user) {
-        return user.isLoggedIn();
+        return user.isUserLoggedIn();
+    }
+
+    public static List<Map<String, User>> allUsers() {
+        return Database.getAllData();
     }
 
 }

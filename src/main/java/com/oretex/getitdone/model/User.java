@@ -9,6 +9,7 @@ public class User {
     private String userName;
     private boolean userLoggedIn;
     private List<ToDo> userListToDoList;
+    private String userAuthentication;
 
     public User() {
     }
@@ -40,13 +41,23 @@ public class User {
     }
 
     @JsonbTransient
-    public boolean isLoggedIn() {
+    public boolean isUserLoggedIn() {
         return userLoggedIn;
     }
 
     @JsonbTransient
-    public void setLoggedIn(boolean userLoggedIn) {
+    public void setUserLoggedIn(boolean userLoggedIn) {
         this.userLoggedIn = userLoggedIn;
+    }
+
+    @JsonbTransient
+    public String getUserAuthentication() {
+        return userAuthentication;
+    }
+
+    @JsonbTransient
+    public void setUserAuthentication(String userAuthentication) {
+        this.userAuthentication = userAuthentication;
     }
 
     public List<ToDo> getUserListToDoList() {

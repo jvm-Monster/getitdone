@@ -1,5 +1,8 @@
 package com.oretex.getitdone.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude
 public class ToDo {
     int id;
     String whatToDo;
@@ -7,9 +10,9 @@ public class ToDo {
     public ToDo() {
     }
 
-    public ToDo(int id, String whatTodo) {
+    public ToDo(int id, String whatToDo) {
         this.id = id;
-        this.whatToDo = whatTodo;
+        this.whatToDo = whatToDo;
     }
 
     public int getId() {
@@ -20,11 +23,11 @@ public class ToDo {
         this.id = id;
     }
 
-    public String getWhatTodo() {
+    public String getWhatToDo() {
         return whatToDo;
     }
 
-    public void setWhatTodo(String whatTodo) {
+    public void setWhatToDo(String whatTodo) {
         this.whatToDo = whatTodo;
     }
 

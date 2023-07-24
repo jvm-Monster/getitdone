@@ -6,7 +6,6 @@ import com.oretex.getitdone.model.User;
 import com.oretex.getitdone.services.UserServices;
 
 import jakarta.ws.rs.HeaderParam;
-import jakarta.ws.rs.POST;
 import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.ProcessingException;
 import jakarta.ws.rs.core.Response;
@@ -27,12 +26,12 @@ public class Authentication {
                 for (Map.Entry<String, User> d : userServices.getUserInfo(user.getUserId()).entrySet()) {
                     user = d.getValue();
                 }
-                user.setLoggedIn(verificationSuccess);
+                user.setUserLoggedIn(verificationSuccess);
                 return Response.status(Response.Status.ACCEPTED)
-                        .header("authStatus", userServices.loggedIn(user))
+                        .header("login", userServices.loggedIn(user))
                         .build();
             } else {
-                user.setLoggedIn(verificationSuccess);
+                user.setUserLoggedIn(verificationSuccess);
                 return Response.status(Response.Status.NOT_FOUND)
                         .header("authStatus", userServices.loggedIn(user))
                         .entity("Account not found")

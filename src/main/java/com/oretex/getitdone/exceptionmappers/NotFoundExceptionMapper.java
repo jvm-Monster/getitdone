@@ -12,6 +12,7 @@ public class NotFoundExceptionMapper implements ExceptionMapper<NotFoundExceptio
     // a null value in the objects
     @Override
     public Response toResponse(NotFoundException exception) {
+        System.err.println(exception);
         // sends a bad request
         return Response.status(Response.Status.BAD_REQUEST)
                 .entity("Bad Request")

@@ -10,6 +10,7 @@ public class InvalidJsonFormat implements ExceptionMapper<ProcessingException> {
 
     @Override
     public Response toResponse(ProcessingException exception) {
+        System.err.println(exception);
         return Response.status(Response.Status.BAD_REQUEST)
                 .entity("An error occured, is it a correct json format ?")
                 .build();
